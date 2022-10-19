@@ -436,27 +436,2071 @@ FAIL src/arrays.test.ts
       at Object.<anonymous> (src/arrays.test.ts:265:43)
 
 PASS src/objects.test.ts
-PASS src/HtmlCss.test.tsx
-PASS src/functions.test.ts
-PASS src/text.test.tsx
-PASS src/App.test.tsx
-----------------|---------|----------|---------|---------|---------------------
-File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
-----------------|---------|----------|---------|---------|---------------------
-All files       |   91.17 |    85.96 |   97.18 |   91.01 |                     
- src            |   91.17 |    85.96 |   97.18 |   91.01 |                     
-  App.tsx       |     100 |      100 |     100 |     100 |                     
-  arrays.ts     |    90.9 |    95.45 |      95 |   90.56 | 136-142             
-  functions.ts  |     100 |      100 |     100 |     100 |                     
-  nested.ts     |   85.93 |    58.82 |   97.05 |   85.71 | 176-179,261-269,301 
-  objects.ts    |   95.83 |      100 |     100 |   95.83 | 55                  
- src/interfaces |       0 |        0 |       0 |       0 |                     
-  answer.ts     |       0 |        0 |       0 |       0 |                     
-  question.ts   |       0 |        0 |       0 |       0 |                     
-----------------|---------|----------|---------|---------|---------------------
+FAIL src/components/StartAttempt.test.tsx
+  ● StartAttempt Component tests › There is an initially disabled Stop Quiz button
 
-Test Suites: 2 failed, 5 passed, 7 total
-Tests:       14 failed, 35 passed, 49 total
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      48 |         const stopButton = screen.getByRole("button", { name: /Stop Quiz/i });
+      49 |         expect(stopButton).toBeInTheDocument();
+    > 50 |         expect(stopButton).toBeDisabled();
+         |                            ^
+      51 |     });
+      52 |     test("There is an initially enabled Mulligan button", () => {
+      53 |         const mulliganButton = screen.getByRole("button", {
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:50:28)
+
+  ● StartAttempt Component tests › Clicking Start Quiz changes enabled buttons
+
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      101 |         startButton.click();
+      102 |         // Then the start is disabled, stop is enabled, and mulligan is disabled
+    > 103 |         expect(startButton).toBeDisabled();
+          |                             ^
+      104 |         expect(stopButton).toBeEnabled();
+      105 |         expect(mulliganButton).toBeDisabled();
+      106 |     });
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:103:29)
+
+  ● StartAttempt Component tests › Clicking Start and Stop Quiz changes enabled buttons
+
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      119 |         // Then the start is enabled, stop is disabled, and mulligan is enabled
+      120 |         expect(startButton).toBeEnabled();
+    > 121 |         expect(stopButton).toBeDisabled();
+          |                            ^
+      122 |         expect(mulliganButton).toBeEnabled();
+      123 |     });
+      124 |     test("Clicking Start, Stop, Mulligan sets attempts to original", () => {
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:121:28)
+
+  ● StartAttempt Component tests › Cannot click start quiz when out of attempts
+
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      164 |             // Then the buttons
+      165 |             expect(startButton).toBeEnabled();
+    > 166 |             expect(stopButton).toBeDisabled();
+          |                                ^
+      167 |             expect(mulliganButton).toBeEnabled();
+      168 |             // And when we Start and then immediately stop the quiz...
+      169 |             startButton.click();
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:166:32)
+
+FAIL src/components/TwoDice.test.tsx
+  ● Console
+
+    console.log
+      YOU WIN!
+
+      at rollLeft (src/components/TwoDice.tsx:22:21)
+
+  ● StartAttempt Component tests › There is an initially disabled Stop Quiz button
+
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      48 |         const stopButton = screen.getByRole("button", { name: /Stop Quiz/i });
+      49 |         expect(stopButton).toBeInTheDocument();
+    > 50 |         expect(stopButton).toBeDisabled();
+         |                            ^
+      51 |     });
+      52 |     test("There is an initially enabled Mulligan button", () => {
+      53 |         const mulliganButton = screen.getByRole("button", {
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:50:28)
+
+  ● StartAttempt Component tests › Clicking Start Quiz changes enabled buttons
+
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      101 |         startButton.click();
+      102 |         // Then the start is disabled, stop is enabled, and mulligan is disabled
+    > 103 |         expect(startButton).toBeDisabled();
+          |                             ^
+      104 |         expect(stopButton).toBeEnabled();
+      105 |         expect(mulliganButton).toBeDisabled();
+      106 |     });
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:103:29)
+
+  ● StartAttempt Component tests › Clicking Start and Stop Quiz changes enabled buttons
+
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      119 |         // Then the start is enabled, stop is disabled, and mulligan is enabled
+      120 |         expect(startButton).toBeEnabled();
+    > 121 |         expect(stopButton).toBeDisabled();
+          |                            ^
+      122 |         expect(mulliganButton).toBeEnabled();
+      123 |     });
+      124 |     test("Clicking Start, Stop, Mulligan sets attempts to original", () => {
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:121:28)
+
+  ● StartAttempt Component tests › Cannot click start quiz when out of attempts
+
+    expect(element).toBeDisabled()
+
+    Received element is not disabled:
+      <button class="btn btn-primary" type="button" />
+
+      164 |             // Then the buttons
+      165 |             expect(startButton).toBeEnabled();
+    > 166 |             expect(stopButton).toBeDisabled();
+          |                                ^
+      167 |             expect(mulliganButton).toBeEnabled();
+      168 |             // And when we Start and then immediately stop the quiz...
+      169 |             startButton.click();
+
+      at Object.<anonymous> (src/components/StartAttempt.test.tsx:166:32)
+
+  ● TwoDice Component tests › There is a `left-die` and `right-die` testid
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Left[0m
+        [36m</button>[39m
+        [36m<div />[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Right [0m
+        [36m</button>[39m
+        [36m<div>[39m
+          [0mLeft Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieOne"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mRight Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieTwo"[39m
+          [36m>[39m
+            [0m6[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      24 |     });
+      25 |     test("There is a `left-die` and `right-die` testid", () => {
+    > 26 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      27 |         const rightDie = screen.getByTestId("right-die");
+      28 |         expect(leftDie).toBeInTheDocument();
+      29 |         expect(rightDie).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:26:32)
+
+  ● TwoDice Component tests › The `left-die` and `right-die` are two different numbers
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Left[0m
+        [36m</button>[39m
+        [36m<div />[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Right [0m
+        [36m</button>[39m
+        [36m<div>[39m
+          [0mLeft Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieOne"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mRight Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieTwo"[39m
+          [36m>[39m
+            [0m6[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      30 |     });
+      31 |     test("The `left-die` and `right-die` are two different numbers", () => {
+    > 32 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      33 |         const rightDie = screen.getByTestId("right-die");
+      34 |         const leftNumber = extractDigits(leftDie);
+      35 |         const rightNumber = extractDigits(rightDie);
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:32:32)
+
+  ● TwoDice Component tests › Clicking left button changes first number
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Left[0m
+        [36m</button>[39m
+        [36m<div />[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Right [0m
+        [36m</button>[39m
+        [36m<div>[39m
+          [0mLeft Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieOne"[39m
+          [36m>[39m
+            [0m5[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mRight Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieTwo"[39m
+          [36m>[39m
+            [0m6[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      54 |         expect(mathRandomFunction).toBeCalledTimes(3);
+      55 |         // And the number to be 5
+    > 56 |         const leftNumber = extractDigits(screen.getByTestId("left-die"));
+         |                                                 ^
+      57 |         expect(leftNumber).toEqual(5);
+      58 |     });
+      59 |     // Clicking right button changes second number
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:56:49)
+
+  ● TwoDice Component tests › Clicking right button changes second number
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="right-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Left[0m
+        [36m</button>[39m
+        [36m<div />[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Right [0m
+        [36m</button>[39m
+        [36m<div>[39m
+          [0mLeft Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieOne"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mRight Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieTwo"[39m
+          [36m>[39m
+            [0m5[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      66 |         expect(mathRandomFunction).toBeCalledTimes(3);
+      67 |         // And the number to be 5
+    > 68 |         const rightNumber = extractDigits(screen.getByTestId("right-die"));
+         |                                                  ^
+      69 |         expect(rightNumber).toEqual(5);
+      70 |     });
+      71 |     // Rolling two different numbers does not win or lose the game
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:68:50)
+
+  ● TwoDice Component tests › Rolling two different numbers does not win or lose the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Left[0m
+        [36m</button>[39m
+        [36m<div />[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Right [0m
+        [36m</button>[39m
+        [36m<div>[39m
+          [0mLeft Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieOne"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mRight Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieTwo"[39m
+          [36m>[39m
+            [0m6[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      74 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+      75 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    > 76 |         const leftDie = screen.getByTestId("left-die");
+         |                                ^
+      77 |         const rightDie = screen.getByTestId("right-die");
+      78 |         // When the left and right buttons are rolled once each
+      79 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:76:32)
+
+  ● TwoDice Component tests › Getting snake eyes loses the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Left[0m
+        [36m</button>[39m
+        [36m<div />[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Right [0m
+        [36m</button>[39m
+        [36m<div>[39m
+          [0mLeft Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieOne"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mRight Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieTwo"[39m
+          [36m>[39m
+            [0m6[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       95 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+       96 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    >  97 |         const leftDie = screen.getByTestId("left-die");
+          |                                ^
+       98 |         const rightDie = screen.getByTestId("right-die");
+       99 |         // When the left and right buttons are rolled once each
+      100 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:97:32)
+
+  ● TwoDice Component tests › Getting matching numbers wins the game
+
+    TestingLibraryElementError: Unable to find an element by: [data-testid="left-die"]
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Left[0m
+        [36m</button>[39m
+        [36m<div />[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRoll Right [0m
+        [36m</button>[39m
+        [36m<div>[39m
+          [0mLeft Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieOne"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mRight Die: [0m
+          [36m<span[39m
+            [33mdata-testid[39m=[32m"dieTwo"[39m
+          [36m>[39m
+            [0m6[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      119 |         const leftButton = screen.getByRole("button", { name: /Roll Left/i });
+      120 |         const rightButton = screen.getByRole("button", { name: /Roll Right/i });
+    > 121 |         const leftDie = screen.getByTestId("left-die");
+          |                                ^
+      122 |         const rightDie = screen.getByTestId("right-die");
+      123 |         // When the left and right buttons are rolled once each
+      124 |         leftButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByTestId (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/TwoDice.test.tsx:121:32)
+
+FAIL src/HtmlCss.test.tsx
+  ● Some HTML Elements are added. › There is a header
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "heading"
+
+    Here are the accessible roles:
+
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      separator:
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Add One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Reveal Answer":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Start Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Stop Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Mulligan":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Left":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Right":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Alphabet":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Year":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript[0m
+          [36m</header>[39m
+          [36m<hr />[39m
+          [36m<span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd One[0m
+            [36m</button>[39m
+            [0mto [0m
+            [0m0[0m
+            [0m.[0m
+          [36m</span>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mReveal Answer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStart Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStop Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mMulligan[0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mAttempt Number: [0m
+            [0m4[0m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right [0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieOne"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mRight Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieTwo"[39m
+            [36m>[39m
+              [0m6[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mshort_answer_question[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Alphabet[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Year[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mHoliday: [0m
+            [36m<span>[39m
+              [0mChristmas[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       7 |     test("There is a header", () => {
+       8 |         render(<App />);
+    >  9 |         const header = screen.getByRole("heading");
+         |                               ^
+      10 |         expect(header).toBeInTheDocument();
+      11 |     });
+      12 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/HtmlCss.test.tsx:9:31)
+
+  ● Some HTML Elements are added. › There is an image with alt text
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "img"
+
+    Here are the accessible roles:
+
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      separator:
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Add One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Reveal Answer":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Start Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Stop Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Mulligan":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Left":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Right":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Alphabet":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Year":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript[0m
+          [36m</header>[39m
+          [36m<hr />[39m
+          [36m<span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd One[0m
+            [36m</button>[39m
+            [0mto [0m
+            [0m0[0m
+            [0m.[0m
+          [36m</span>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mReveal Answer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStart Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStop Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mMulligan[0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mAttempt Number: [0m
+            [0m4[0m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right [0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieOne"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mRight Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieTwo"[39m
+            [36m>[39m
+              [0m6[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mshort_answer_question[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Alphabet[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Year[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mHoliday: [0m
+            [36m<span>[39m
+              [0mChristmas[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      13 |     test("There is an image with alt text", () => {
+      14 |         render(<App />);
+    > 15 |         const image = screen.getByRole("img");
+         |                              ^
+      16 |         expect(image).toBeInTheDocument();
+      17 |         expect(image).toHaveAttribute("alt");
+      18 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/HtmlCss.test.tsx:15:30)
+
+  ● Some HTML Elements are added. › There is a list with at least three elements
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "list"
+
+    Here are the accessible roles:
+
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      separator:
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Add One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Reveal Answer":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Start Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Stop Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Mulligan":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Left":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Right":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Alphabet":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Year":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript[0m
+          [36m</header>[39m
+          [36m<hr />[39m
+          [36m<span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd One[0m
+            [36m</button>[39m
+            [0mto [0m
+            [0m0[0m
+            [0m.[0m
+          [36m</span>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mReveal Answer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStart Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStop Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mMulligan[0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mAttempt Number: [0m
+            [0m4[0m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right [0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieOne"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mRight Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieTwo"[39m
+            [36m>[39m
+              [0m6[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mshort_answer_question[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Alphabet[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Year[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mHoliday: [0m
+            [36m<span>[39m
+              [0mChristmas[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      20 |     test("There is a list with at least three elements", () => {
+      21 |         render(<App />);
+    > 22 |         const list = screen.getByRole("list");
+         |                             ^
+      23 |         expect(list).toBeInTheDocument();
+      24 |         expect(list.children.length).toBeGreaterThanOrEqual(3);
+      25 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/HtmlCss.test.tsx:22:29)
+
+  ● Some Bootstrap Elements are added › There is one bootstrap button with the text 'Log Hello World'
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Log Hello World/i`
+
+    Here are the accessible roles:
+
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      separator:
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Add One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Reveal Answer":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Start Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Stop Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Mulligan":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Left":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Right":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Alphabet":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Year":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript[0m
+          [36m</header>[39m
+          [36m<hr />[39m
+          [36m<span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd One[0m
+            [36m</button>[39m
+            [0mto [0m
+            [0m0[0m
+            [0m.[0m
+          [36m</span>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mReveal Answer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStart Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStop Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mMulligan[0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mAttempt Number: [0m
+            [0m4[0m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right [0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieOne"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mRight Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieTwo"[39m
+            [36m>[39m
+              [0m6[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mshort_answer_question[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Alphabet[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Year[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mHoliday: [0m
+            [36m<span>[39m
+              [0mChristmas[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      39 |     test("There is one bootstrap button with the text 'Log Hello World'", () => {
+      40 |         render(<App />);
+    > 41 |         const button = screen.getByRole("button", { name: /Log Hello World/i });
+         |                               ^
+      42 |         expect(button).toBeInTheDocument();
+      43 |         expect(button).toHaveClass("btn");
+      44 |         expect(button).toHaveClass("btn-primary");
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/HtmlCss.test.tsx:41:31)
+
+  ● Some Bootstrap Elements are added › Clicking the bootstrap button logs 'Hello World!'
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Log Hello World/i`
+
+    Here are the accessible roles:
+
+      banner:
+
+      Name "":
+      [36m<header[39m
+        [33mclass[39m=[32m"App-header"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+      separator:
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      Name "":
+      [36m<hr />[39m
+
+      --------------------------------------------------
+      button:
+
+      Name "Add One":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Reveal Answer":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Start Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Stop Quiz":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Mulligan":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Left":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Roll Right":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Alphabet":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      Name "Advance by Year":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript[0m
+          [36m</header>[39m
+          [36m<hr />[39m
+          [36m<span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd One[0m
+            [36m</button>[39m
+            [0mto [0m
+            [0m0[0m
+            [0m.[0m
+          [36m</span>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mReveal Answer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStart Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStop Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mMulligan[0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mAttempt Number: [0m
+            [0m4[0m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right [0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieOne"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mRight Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieTwo"[39m
+            [36m>[39m
+              [0m6[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mshort_answer_question[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Alphabet[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Year[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mHoliday: [0m
+            [36m<span>[39m
+              [0mChristmas[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      54 |         const consoleSpy = jest.spyOn(console, "log");
+      55 |         render(<App />);
+    > 56 |         const button = screen.getByRole("button", { name: /Log Hello World/i });
+         |                               ^
+      57 |         userEvent.click(button);
+      58 |         expect(consoleSpy).toHaveBeenCalledWith("Hello World!");
+      59 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/HtmlCss.test.tsx:56:31)
+
+PASS src/functions.test.ts
+FAIL src/components/ChangeType.test.tsx
+  ● ChangeType Component tests › The initial type is Short Answer
+
+    TestingLibraryElementError: Unable to find an element with the text: /Short Answer/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mshort_answer_question[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       9 |     test("The initial type is Short Answer", () => {
+      10 |         // We use `getByText` because the text MUST be there
+    > 11 |         const typeText = screen.getByText(/Short Answer/i);
+         |                                 ^
+      12 |         expect(typeText).toBeInTheDocument();
+      13 |     });
+      14 |     test("The initial type is not Multiple Choice", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:11:33)
+
+  ● ChangeType Component tests › There is a button labeled Change Type
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mshort_answer_question[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      19 |
+      20 |     test("There is a button labeled Change Type", () => {
+    > 21 |         const changeTypeButton = screen.getByRole("button", {
+         |                                         ^
+      22 |             name: /Change Type/i
+      23 |         });
+      24 |         expect(changeTypeButton).toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:21:41)
+
+  ● ChangeType Component tests › Clicking the button changes the type.
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mshort_answer_question[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      26 |
+      27 |     test("Clicking the button changes the type.", () => {
+    > 28 |         const changeTypeButton = screen.getByRole("button", {
+         |                                         ^
+      29 |             name: /Change Type/i
+      30 |         });
+      31 |         changeTypeButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:28:41)
+
+  ● ChangeType Component tests › Clicking the button twice keeps the type the same.
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "short_answer_question":
+      [36m<button[39m
+        [33mclass[39m=[32m"btn btn-primary"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m/>[39m
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mshort_answer_question[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      39 |
+      40 |     test("Clicking the button twice keeps the type the same.", () => {
+    > 41 |         const changeTypeButton = screen.getByRole("button", {
+         |                                         ^
+      42 |             name: /Change Type/i
+      43 |         });
+      44 |         changeTypeButton.click();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/ChangeType.test.tsx:41:41)
+
+FAIL src/components/CycleHoliday.test.tsx
+  ● CycleHoliday Component tests › An initial holiday is displayed
+
+    TestingLibraryElementError: Unable to find an element with the text: /Holiday: (.*)/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mAdvance by Alphabet[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mAdvance by Year[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [0mHoliday: [0m
+          [36m<span>[39m
+            [0mChristmas[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       9 |
+      10 |     test("An initial holiday is displayed", () => {
+    > 11 |         const initialHoliday = screen.getByText(/Holiday: (.*)/i);
+         |                                       ^
+      12 |         expect(initialHoliday).toBeInTheDocument();
+      13 |     });
+      14 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/CycleHoliday.test.tsx:11:39)
+
+PASS src/components/Counter.test.tsx
+PASS src/components/RevealAnswer.test.tsx
+FAIL src/text.test.tsx
+  ● renders the text 'Hello World' somewhere
+
+    TestingLibraryElementError: Unable to find an element with the text: /Hello World/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript[0m
+          [36m</header>[39m
+          [36m<hr />[39m
+          [36m<span>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdd One[0m
+            [36m</button>[39m
+            [0mto [0m
+            [0m0[0m
+            [0m.[0m
+          [36m</span>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mReveal Answer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStart Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mStop Quiz[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mMulligan[0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mAttempt Number: [0m
+            [0m4[0m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Left[0m
+          [36m</button>[39m
+          [36m<div />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mRoll Right [0m
+          [36m</button>[39m
+          [36m<div>[39m
+            [0mLeft Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieOne"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mRight Die: [0m
+            [36m<span[39m
+              [33mdata-testid[39m=[32m"dieTwo"[39m
+            [36m>[39m
+              [0m6[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"btn btn-primary"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mshort_answer_question[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Alphabet[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mAdvance by Year[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0mHoliday: [0m
+            [36m<span>[39m
+              [0mChristmas[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<hr />[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       5 | test("renders the text 'Hello World' somewhere", () => {
+       6 |     render(<App />);
+    >  7 |     const texts = screen.getAllByText(/Hello World/);
+         |                          ^
+       8 |     expect(texts.length).toBeGreaterThanOrEqual(1);
+       9 | });
+      10 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at getAllByText (node_modules/@testing-library/dom/dist/query-helpers.js:130:15)
+      at Object.<anonymous> (src/text.test.tsx:7:26)
+
+PASS src/App.test.tsx
+-------------------|---------|----------|---------|---------|---------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s   
+-------------------|---------|----------|---------|---------|---------------------
+All files          |   92.11 |    84.61 |   96.59 |      92 |                     
+ src               |   91.12 |    85.96 |   97.14 |   90.96 |                     
+  App.tsx          |     100 |      100 |     100 |     100 |                     
+  arrays.ts        |    90.9 |    95.45 |      95 |   90.56 | 136-142             
+  functions.ts     |     100 |      100 |     100 |     100 |                     
+  nested.ts        |   85.93 |    58.82 |   97.05 |   85.71 | 176-179,261-269,301 
+  objects.ts       |   95.83 |      100 |     100 |   95.83 | 55                  
+ src/components    |   97.05 |       75 |   94.44 |   97.05 |                     
+  ChangeType.tsx   |   66.66 |        0 |      50 |   66.66 | 11                  
+  Counter.tsx      |     100 |      100 |     100 |     100 |                     
+  CycleHoliday.tsx |     100 |      100 |     100 |     100 |                     
+  RevealAnswer.tsx |     100 |      100 |     100 |     100 |                     
+  StartAttempt.tsx |     100 |      100 |     100 |     100 |                     
+  TwoDice.tsx      |     100 |      100 |     100 |     100 |                     
+ src/interfaces    |       0 |        0 |       0 |       0 |                     
+  answer.ts        |       0 |        0 |       0 |       0 |                     
+  question.ts      |       0 |        0 |       0 |       0 |                     
+-------------------|---------|----------|---------|---------|---------------------
+
+Test Suites: 8 failed, 5 passed, 13 total
+Tests:       40 failed, 61 passed, 101 total
 Snapshots:   0 total
-Time:        6.764 s
+Time:        10.574 s
 Ran all test suites.
